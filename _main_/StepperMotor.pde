@@ -4,10 +4,13 @@ Contributers:
     
 Purpose: Control a single Stepper Motor
 */
+#include <IOShieldOled.h>
+#include <StepperMotor.h>
+
 StepperMotor::StepperMotor(int L1, int L2, int L3, int L4)
     :LD1(L1), LD2(L2), LD3(L3), LD4(L4), indexM(0), motorTime(250)
-{  
-}
+    {  
+    }
 
 void StepperMotor::set_motorTime(int motor_time){
     motorTime = motor_time;

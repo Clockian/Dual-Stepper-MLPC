@@ -4,6 +4,9 @@ Contributers:
 	
 Purpose: Control a single Stepper Motor
 */
+#ifndef STEPPERMOTOR_H
+#define STEPPERMOTOR_H
+
 #include <IOShieldOled.h>
 
 class StepperMotor{
@@ -21,3 +24,4 @@ class StepperMotor{
 		void run_motor(bool direction); //False goes negative, true positive
 		
 };
+#endif
