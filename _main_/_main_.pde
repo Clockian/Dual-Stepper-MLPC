@@ -1,10 +1,9 @@
-/* main.pde
+/* _main_.pde
 Contributers:
     Jasque Saydyk
     
 Purpose: Run the Dual Stepper Motors Laser Pointer Control Program
 */
-#include <IOShieldOled.h>
 #include <StepperMotor.h>
 #include <Switch.h>
 #include <Mode.h>
@@ -31,7 +30,7 @@ void loop(){
           mode.manual();
       }
       else if(switch2.on_off() == 1){
-          //mode.automatic();
+          mode.automatic();
       }
   }
   else{
