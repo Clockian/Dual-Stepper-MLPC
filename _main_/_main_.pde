@@ -8,15 +8,15 @@ Purpose: Run the Dual Stepper Motors Laser Pointer Control Program
 #include <Switch.h>
 #include <Mode.h>
 
-StepperMotor motor1(70, 71, 72, 73);
-StepperMotor motor2(74, 75, 76, 77);
+StepperMotor motorX(70, 71, 72, 73);
+StepperMotor motorY(74, 75, 76, 77);
 
 Switch switch1(2);
 Switch switch2(7);
 Switch switch3(8);
 Switch switch4(79);
 
-Mode mode(motor1, motor2, switch3, switch4);
+Mode mode(motorX, motorY, switch3, switch4);
 
 void setup(){
   switch1.init_var();

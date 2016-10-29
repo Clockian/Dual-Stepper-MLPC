@@ -8,6 +8,7 @@ Purpose: Control the manuel mode of the stepper motor
 #include <Switch.h>
 #include <StepperMotor.h>
 #include <Oled.h>
+#include <IOShieldOled.h>
 
 Mode::Mode(StepperMotor mX, StepperMotor mY, Switch S1, Switch S2)
     :motorX(mX), motorY(mY), SW1(S1), SW2(S2), waitState(false), positionState(3), waitTime(3000)
@@ -20,6 +21,7 @@ void Mode::init_var(){
     SW1.init_var();
     SW2.init_var();
     oled.init_var();
+    Serial.begin(9600);
 }
 
 void Mode::off(){
@@ -50,7 +52,7 @@ void Mode::move_laser(int targetX, int targetY){
 }
 
 void Mode::show_status(){
-    char currentStatus1[50] = "X = 1 3 8 9 8";
+    /*char currentStatus1[50] = "X = 1 3 8 9 8";
     currentStatus1[3] = motorX.get_motorStep();
     oled.print_string(currentStatus1, 2);
     oled.update();
@@ -58,7 +60,12 @@ void Mode::show_status(){
     char currentStatus2[6] = "Y=";
     currentStatus2[3] = (char) 13;
     oled.print_string(currentStatus2, 3);
-    oled.update();
+    oled.update();*/
+    IOShieldOled.setCursor(0,2);
+    char currentStatusX[50] = "X=";
+    currentStatusX[3] = (char)motorX.get_motorStep();
+    Serial.println(motorX.get_motorStep()); 
+    IOShieldOled.putString(currentStatusX);
 }
 
 void Mode::manual(){
