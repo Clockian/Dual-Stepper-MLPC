@@ -15,6 +15,6 @@ void Switch::init_var(){
     pinMode(SW1, INPUT);
 }
 
-int Switch::on_off(){
+bool Switch::on_off(){
     return digitalRead(SW1);
 }

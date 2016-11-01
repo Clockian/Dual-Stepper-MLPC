@@ -13,6 +13,6 @@ class Switch{
 	public:
 		Switch(int S1);
 		void init_var();
-		int on_off();
+		bool on_off();
 };
 #endif
