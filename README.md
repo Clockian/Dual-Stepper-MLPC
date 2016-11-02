@@ -1,5 +1,4 @@
 # Dual-Stepper-MLPC
-Class project
 This project for CSC&EEE 230 is to control a laser pointer using two stepper motors connected to a ChipKit by Digilent, 
 which is an offshoot of an Arduino.
 
