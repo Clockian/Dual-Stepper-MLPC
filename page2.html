@@ -1,0 +1,78 @@
+<!doctype html>
+<html> 
+	<head>
+		<title>My Webpage</title>
+		<link href="main.css" rel="stylesheet" type="text/css" />
+		<meta http-equiv="refresh" content="3" >
+	</head>
+	
+	<body>
+		<h1>Functional Requirements</h1>
+		
+		<nav>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="page1.html">Final Project Guidelines</a></li>
+				<li>Functional Requirements</li>
+				<li><a href="page3.html">Setting Up</a></li>
+				<li><a href="page4.html">Chipkit Reference</a></li>
+			</ul>
+		</nav>
+		
+		<h2>Requirement 1</h2>
+		<p>The micro-controller shall control two stepper motors:</p>
+		<ul>
+			<li>Horizontal Motor controlled by Led 1, Led 2, Led 3, and Led 4a</li>
+			<li>Vertical Motor controlled by Led 5, Led 6, Led 7, and Led 8</li>
+		</ul>
+		
+		<h2>Requirement 2</h2>
+		<p>Switch 1 will control Stop/Run functionality. This should turn the system off immediately.</p>
+		<ul>
+			<li>0: Stop</li>
+			<li>1: Run</li>
+		</ul>
+		
+		<h2>Requirement 3</h2>
+		<p>Switch 2 will control Manual/Auto mode</p>
+		<ul>
+			<li>0: Manual Mode - The laser will point to the following</li>
+			<img src="manual mode.png">
+			<li>1: Auto Mode - The laser pointer performs the following movements</li>
+			<ul>
+				<li>Move to C, wait 3 seconds</li>
+				<li>Move to B, wait 3 seconds</li>
+				<li>Move to A, wait 3 seconds</li>
+				<li>Move to Home, wait 3 seconds</li>
+				<li>Repeat the above sequence continuously until interrupted</li>
+			</ul>
+		</ul>
+		
+		<h2>Additional Features</h2>
+		<p>When the above requirements are complete and tested to be fully working, these additional features can be implemented</p>
+		<h3>Real Laser Control</h3>
+			<ul>
+				<li>This would involve 2 buttons, BTN1 and BTN2 for the X and Y axis, and the POT.</li>
+				<li>Each button will have 3 states</li>
+					<ul>
+						<li>Off - default</li>
+						<li>Editing - adjusting target using POT, if both BTNs are in this state, allow adjusting both numbers at once</li>
+						<li>Active - When both BTNs are in this state, the laser will begin to move to the target, otherwise be doing what switch 2 is</li>
+					</ul>
+				<li>Use the Oled to show the necessary information to the user</li>
+			</ul>
+		
+		<h3>Shoot Laser</h3>
+			<ul>
+				<li>Designated to button 3, this will make the laser blink to simulate it "shooting" upon a click</li>
+			</ul>
+		
+		<h3>One Extra Button</h3>
+			<ul>
+				<li>Crazy idea - when button 4 is clicked, a simple game appears on the Oled that can be played by the player</li>
+				<li>Ok idea - Allow changing of the manual and automatic X,Y coordinates</li>
+				<li>Boring idea - credits scroll through the Oled</li>
+			</ul>
+	</body>
+	<p class="secondary">Created by Jasque Saydyk 2016</p>
+</html>

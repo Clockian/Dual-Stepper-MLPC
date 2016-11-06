@@ -1,0 +1,99 @@
+<!doctype html>
+<html> 
+	<head>
+		<title>My Webpage</title>
+		<link href="main.css" rel="stylesheet" type="text/css" />
+		<meta http-equiv="refresh" content="3" >
+	</head>
+	
+	<body>
+		<h1>Setting Up the Development Enviroment</h1>
+		
+		<nav>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="page1.html">Final Project Guidelines</a></li>
+				<li><a href="page2.html">Functional Requirements</a></li>
+				<li>Setting Up</li>
+				<li><a href="page4.html">Chipkit Reference</a></li>
+			</ul>
+		</nav>
+		
+		<h2>Development Enviroment</h2>
+			<p>The IDE the project will use is MPIDE, as it allows for simplest setup.<br><br>
+			In MPIDE, open main.pde, which will open all of the other header and class files in the dictionary in separate tabs in the IDE.<br><br>
+			The Arduino Board we will use for this project is the Digilent ChipKit Max32 Board along with the ChipKit Basic I/O Shield.
+			<p>As for specific setting in MPIDE, you will need to change</p>
+			<ul>
+				<li>Tools -> Board -> ChipKit Max32</li>
+				<li>Tools -> Serial Port -> COM_ (if it doesn't initially work, change this until it successfully uploads)</li>
+			</ul>
+		<h2>Test for Working Board</h2>
+			<p>Use the following code to test that the upload to the board is working correctly, MPIDE is compiling correctly, and such</p>
+			<code>
+				#include IOShieldOled.h<br>
+
+				const int ledPin =  13;      // System Operational LED<br>
+				const int LD1 =  70;<br>
+				const int LD2 =  71;<br>
+				const int LD3 =  72;<br>
+				const int LD4 =  73;<br>
+				int rotation = 0;<br>
+				<br>
+				void setup() {<br>
+				  &nbsp;&nbsp;pinMode(ledPin, OUTPUT);<br>
+				  &nbsp;&nbsp;pinMode(LD1, OUTPUT);<br>
+				  &nbsp;&nbsp;pinMode(LD2, OUTPUT);<br>
+				  &nbsp;&nbsp;pinMode(LD3, OUTPUT);<br>
+				  &nbsp;&nbsp;pinMode(LD4, OUTPUT);<br>
+				  <br>
+				  &nbsp;&nbsp;IOShieldOled.begin();<br>
+				  <br>
+				  &nbsp;&nbsp;IOShieldOled.clearBuffer();<br>
+				  &nbsp;&nbsp;IOShieldOled.setCursor(0, 0);<br>
+				  &nbsp;&nbsp;IOShieldOled.putString("EX00 Basic IO");<br>
+				  &nbsp;&nbsp;IOShieldOled.setCursor(0, 1);<br>
+				  &nbsp;&nbsp;IOShieldOled.putString("=============");<br>
+				  &nbsp;&nbsp;IOShieldOled.setCursor(0, 2);<br>
+				  &nbsp;&nbsp;IOShieldOled.putString("* Drivers Test *");<br>
+				  &nbsp;&nbsp;IOShieldOled.setCursor(0, 3);<br>
+				  &nbsp;&nbsp;IOShieldOled.putString("* 2-19-2014 *");<br>
+				  <br>
+				  &nbsp;&nbsp;IOShieldOled.updateDisplay();<br>
+				}<br>
+				<br>
+				void loop() {<br>
+				  &nbsp;&nbsp;IOShieldOled.updateDisplay();<br>
+				  &nbsp;&nbsp;digitalWrite(ledPin, HIGH);<br>
+				  &nbsp;&nbsp;delay(10);<br>
+				  <br>
+				  &nbsp;&nbsp;rotation = rotation + 1;<br>
+				  <br>
+				  &nbsp;&nbsp;if (rotation > 16) { rotation = 1; }<br>
+				  <br>
+				  &nbsp;&nbsp;switch (rotation) {<br>
+					&nbsp;&nbsp;&nbsp;case 1: digitalWrite(LD1, HIGH); break;<br>
+					&nbsp;&nbsp;&nbsp;case 2: digitalWrite(LD2, HIGH); break;<br>
+					&nbsp;&nbsp;&nbsp;case 3: digitalWrite(LD3, HIGH); break;<br>
+					&nbsp;&nbsp;&nbsp;case 4: digitalWrite(LD4, HIGH); break;<br> 
+					&nbsp;&nbsp;&nbsp;case 5: digitalWrite(LD5, HIGH); break;<br>
+					&nbsp;&nbsp;&nbsp;case 6: digitalWrite(LD6, HIGH); break;<br>
+					&nbsp;&nbsp;&nbsp;case 7: digitalWrite(LD7, HIGH); break;<br>
+					&nbsp;&nbsp;&nbsp;case 8: digitalWrite(LD8, HIGH); break;<br>
+					&nbsp;&nbsp;&nbsp;case 9: digitalWrite(LD8, LOW); break;<br>
+					&nbsp;&nbsp;&nbsp;case 10: digitalWrite(LD7, LOW); break;<br>
+					&nbsp;&nbsp;&nbsp;case 11: digitalWrite(LD6, LOW); break;<br>
+					&nbsp;&nbsp;&nbsp;case 12: digitalWrite(LD5, LOW); break;<br> 
+					&nbsp;&nbsp;&nbsp;case 13: digitalWrite(LD4, LOW); break;<br>
+					&nbsp;&nbsp;&nbsp;case 14: digitalWrite(LD3, LOW); break;<br>
+					&nbsp;&nbsp;&nbsp;case 15: digitalWrite(LD2, LOW); break;<br>
+					&nbsp;&nbsp;&nbsp;case 16: digitalWrite(LD1, LOW); break;<br>
+				  &nbsp;&nbsp;}<br>
+				  <br>
+				  &nbsp;&nbsp;digitalWrite(ledPin, LOW); <br>
+				  &nbsp;&nbsp;delay(40); <br>
+				}<br>
+			</code>
+	</body>
+	
+</html>

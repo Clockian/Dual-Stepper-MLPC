@@ -1,0 +1,73 @@
+body {
+	
+	font-family: arial;
+}
+
+h1{
+	color: #555;
+	text-align: center;
+} 
+
+nav{
+	 text-align: center
+}
+
+nav ul {
+	margin: 0;
+	padding: 0 0 0 15px;
+	display: inline;
+}
+
+nav ul li {
+	background: #555;
+	color: white;
+	display: inline-block;
+	list-style-type: none;
+	padding: 5px 15px;
+}
+
+nav ul li a {
+	color: white;
+}
+
+h2, p, li{
+	color: #555;
+	text-align: center
+	display: inline-block;
+}
+
+a {
+	color: blue;
+}
+/*
+ol li{
+	background: #666;
+	color: white;
+	padding:5px 0px 5px 40px;
+}
+*/
+h3 {
+	color: #555;
+	text-align: center
+	display: inline-block;
+	padding:0px 0px 0px 15px;
+}
+
+p { 
+	background: #666;
+	color: white;
+	padding: 10px;
+}
+
+img {
+	padding:0px 0px 0px 20px
+}
+
+.secondary{
+	background: none;
+	color: #777;
+}
+
+#special {
+	background: red;
+}
